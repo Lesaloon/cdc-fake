@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClientService } from './http-client.service';
-import { HttpClient } from '@angular/common/http';
+import { User } from '../interfaces/user';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpXhrBackend } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
-  constructor(private http: HttpClient) {
-    this.httpClient = new HttpClientService(http);
+  constructor(private HttpClientService: HttpClientService) {
+
   }
 
-  httpClient: HttpClientService;
-
-  getAllUsers() {
-    return this.httpClient.get('http://localhost:3000/api/user/all');
+  getAllUsers() : Observable<User[]> {
+    return this.HttpClientService.get('http://localhost:3000/api/user/all');
   }
 
   getAllProducts() {
-    return this.httpClient.get('http://localhost:3000/api/product/all');
+    return this.HttpClientService.get('http://localhost:3000/api/product/all');
   }
 }
