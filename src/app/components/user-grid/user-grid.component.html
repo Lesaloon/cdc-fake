@@ -1,2 +1,24 @@
-<p>user-grid works!</p>
-{{users|json}}
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Username</th>
+			<th>Role</th>
+			<th>Actions</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let user of users">
+			<td>{{ user.id }}</td>
+			<td>{{ user.username }}</td>
+			<td>{{ user.role }}</td>
+			<td>
+				<button (click)="duplicateUser(user)">
+					duplicate
+				</button>
+				<button (click)="deleteUser(user)">
+					delete
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
