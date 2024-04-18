@@ -9,10 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class UserComponent {
   users: User[] = [];
 
-
-  constructor(private apiService: ApiService) {
-
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.getAllUsers().subscribe((users: User[]) => {
