@@ -12,19 +12,19 @@ export class HttpClientService {
     return this.http.get(url);
   }
 
-  post(url: string, body: any) : Observable<any> {
+  post(url: string, body: any = null) : Observable<any> {
     return this.http.post(url, body);
   }
 
-  put(url: string, body: any) : Observable<any> {
+  put(url: string, body: any = null) : Observable<any> {
     return this.http.put(url, body);
   }
 
-  delete(url: string, body: any) : Observable<any> {
+  delete(url: string) : Observable<any> {
     return this.http.delete(url);
   }
 
-  patch(url: string, body: any) : Observable<any> {
+  patch(url: string, body: any = null) : Observable<any> {
     return this.http.patch(url, body);
   }
 }
