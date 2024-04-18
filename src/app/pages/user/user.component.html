@@ -1,1 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<div>
+		<label for="username">username</label>
+		<input id="username" type="text" formControlName="username">
+	</div>
+
+	<div>
+		<label for="password">password</label>
+		<input id="password" type="text" formControlName="password">
+	</div>
+
+	<div>
+		<label for="role">role</label>
+		<select name="role" id="role" formControlName="role">
+			<option value="admin">admin</option>
+			<option value="user">user</option>
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
 <app-user-grid [users]="users"/>
